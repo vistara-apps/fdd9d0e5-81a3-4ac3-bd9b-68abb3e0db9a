@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "RetailRune",
+    "subtitle": "Built with Zara",
+    "description": "RetailRune is a Base Mini App built with Zara.",
+    "iconUrl": "https://0co.to/images/zara-2.png",
+    "homeUrl": "https://fdd9d0e581a34ac3bd9b68abb3e0db9a-zsa6.vercel.app",
+    "splashImageUrl": "https://fdd9d0e581a34ac3bd9b68abb3e0db9a-zsa6.vercel.app/splash.png",
+    "splashBackgroundColor": "#000000",
+    "heroImageUrl": "https://fdd9d0e581a34ac3bd9b68abb3e0db9a-zsa6.vercel.app/image.png",
+    "tagline": "RetailRune",
+    "screenshotUrls": [
+      "https://fdd9d0e581a34ac3bd9b68abb3e0db9a-zsa6.vercel.app/screenshot.png",
+      "https://fdd9d0e581a34ac3bd9b68abb3e0db9a-zsa6.vercel.app/screenshot.png"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "base",
+      "miniapp",
+      "onchainkit"
+    ],
+    "webhookUrl": "https://fdd9d0e581a34ac3bd9b68abb3e0db9a-zsa6.vercel.app/api/webhook"
+  }
+}

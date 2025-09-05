@@ -1,0 +1,14 @@
+{
+  "name": "RetailRune",
+  "description": "RetailRune is a Base Mini App built with Zara.",
+  "image": "https://dummyimage.com/1200x628/0a0b0d/ffffff.png&text=OG",
+  "external_url": "https://fdd9d0e5-81a3-4ac3-bd9b-68abb3e0db9a.vercel.app",
+  "properties": {
+    "app": {
+      "name": "RetailRune",
+      "description": "RetailRune is a Base Mini App built with Zara.",
+      "url": "https://fdd9d0e5-81a3-4ac3-bd9b-68abb3e0db9a.vercel.app",
+      "icon": "https://0co.to/images/zara-2.png"
+    }
+  }
+}
