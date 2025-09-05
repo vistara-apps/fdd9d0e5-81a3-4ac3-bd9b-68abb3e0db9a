@@ -34,9 +34,52 @@ export function RecommendationEngine({
   const generateRecommendations = async () => {
     setLoading(true);
     try {
-      // Simulate AI recommendation generation
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Call the real API
+      const response = await fetch('/api/recommendations', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userId,
+          context,
+          currentLocation: 'demo_store',
+          recentInteractions: [], // In a real app, get from user profile
+          purchaseHistory: [], // In a real app, get from user profile
+          availableProducts: SAMPLE_PRODUCTS,
+        }),
+      });
 
+      if (!response.ok) {
+        throw new Error('Failed to fetch recommendations');
+      }
+
+      const result = await response.json();
+      
+      if (result.success && result.data) {
+        const { recommendations: apiRecommendations, personalizedMessage: apiMessage } = result.data;
+        
+        // Convert API response to component format
+        const productRecommendations = apiRecommendations.map((rec: any) => ({
+          recommendationId: `rec_${rec.product.productId}_${Date.now()}`,
+          userId,
+          productId: rec.product.productId,
+          score: rec.score,
+          reason: rec.reason,
+          context,
+          createdAt: new Date(),
+          interacted: false,
+        }));
+
+        setRecommendations(productRecommendations);
+        setPersonalizedMessage(apiMessage || generatePersonalizedMessage(context, productRecommendations.length));
+      } else {
+        throw new Error(result.error || 'Failed to generate recommendations');
+      }
+    } catch (error) {
+      console.error('Failed to generate recommendations:', error);
+      
+      // Fallback to local generation
       const productRecommendations = SAMPLE_PRODUCTS.map(product => ({
         recommendationId: `rec_${product.productId}_${Date.now()}`,
         userId,
@@ -50,8 +93,6 @@ export function RecommendationEngine({
 
       setRecommendations(productRecommendations);
       setPersonalizedMessage(generatePersonalizedMessage(context, productRecommendations.length));
-    } catch (error) {
-      console.error('Failed to generate recommendations:', error);
     } finally {
       setLoading(false);
     }
