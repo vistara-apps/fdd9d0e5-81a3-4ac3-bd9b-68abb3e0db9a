@@ -1,6 +1,8 @@
-# RetailRune - Personalized On-Chain Shopping Experiences
+# RetailRune 🛍️⚡
 
-RetailRune is an AI-powered retail platform built for Base Mini Apps that provides personalized product recommendations and follow-up offers to enhance in-store customer engagement and loyalty.
+**Personalized on-chain shopping experiences powered by AI**
+
+RetailRune is a cutting-edge Base Mini App that revolutionizes retail shopping through AI-powered product recommendations and personalized follow-up offers. Built for the Base ecosystem, it seamlessly integrates blockchain technology with intelligent shopping assistance.
 
 ## Features
 
