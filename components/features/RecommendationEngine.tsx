@@ -79,7 +79,7 @@ export function RecommendationEngine({
     return `Recommended because it ${reasons.join(' and ')}.`;
   };
 
-  const generatePersonalizedMessage = (context: string, count: number): string => {
+  const generatePersonalizedMessage = (context: 'in_store' | 'follow_up' | 'display', count: number): string => {
     const messages = {
       in_store: [
         `Welcome! Based on your preferences, I found ${count} perfect items for you.`,

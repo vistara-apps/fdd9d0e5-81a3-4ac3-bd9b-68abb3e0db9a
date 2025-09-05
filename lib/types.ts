@@ -27,7 +27,7 @@ export interface Product {
   brand?: string;
   imageUrl?: string;
   inStock: boolean;
-  tags: string[];
+  tags: readonly string[];
   createdAt: Date;
   updatedAt: Date;
 }
