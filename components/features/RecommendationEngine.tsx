@@ -98,7 +98,7 @@ export function RecommendationEngine({
       ],
     };
     
-    const contextMessages = messages[context] || messages.in_store;
+    const contextMessages = messages[context as keyof typeof messages] || messages.in_store;
     return contextMessages[Math.floor(Math.random() * contextMessages.length)];
   };
 

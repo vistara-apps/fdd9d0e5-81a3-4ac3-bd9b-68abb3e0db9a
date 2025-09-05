@@ -9,12 +9,14 @@ RetailRune is an AI-powered retail platform built for Base Mini Apps that provid
 - **Interactive Digital Displays**: QR code-triggered personalized greetings and recommendations
 - **Store Analytics**: Real-time metrics and customer behavior insights
 - **Base Integration**: Native blockchain functionality with OnchainKit and MiniKit
+- **x402 Payment Integration**: Seamless USDC payments using the x402 protocol for premium features
 
 ## Tech Stack
 
 - **Frontend**: Next.js 15 with App Router, React 18, TypeScript
 - **Styling**: Tailwind CSS with custom design system
-- **Blockchain**: Base (Coinbase L2), OnchainKit, MiniKit
+- **Blockchain**: Base (Coinbase L2), OnchainKit, MiniKit, Wagmi
+- **Payments**: x402 protocol with USDC on Base for seamless micropayments
 - **AI**: OpenAI GPT for recommendation generation
 - **Social**: Farcaster integration for social commerce
 - **Database**: Supabase for application data storage
@@ -47,6 +49,9 @@ cp .env.example .env.local
 
 Edit `.env.local` with your API keys:
 - `NEXT_PUBLIC_ONCHAINKIT_API_KEY`: Your OnchainKit API key
+- `CDP_API_KEY_ID`: CDP SDK API key ID for x402 payments
+- `CDP_API_KEY_SECRET`: CDP SDK API key secret for x402 payments
+- `CDP_WALLET_SECRET`: CDP wallet secret for x402 payments
 - `OPENAI_API_KEY`: OpenAI API key for AI recommendations
 - `NEXT_PUBLIC_SUPABASE_URL`: Supabase project URL
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`: Supabase anonymous key
@@ -85,11 +90,16 @@ npm run dev
 2. **Post-Purchase Follow-up Flow**:
    - Purchase completion → Customer identification → AI offer generation → Farcaster delivery → Redemption
 
+3. **x402 Payment Flow**:
+   - Service request → 402 Payment Required → Wallet authorization → USDC payment → Content access
+
 ## API Integration
 
 ### Required APIs
 
 - **OnchainKit/MiniKit**: Base blockchain integration
+- **x402**: HTTP-native payment protocol for USDC micropayments
+- **CDP SDK**: Coinbase Developer Platform for wallet management
 - **OpenAI**: AI recommendation generation
 - **Neynar**: Farcaster social features
 - **Supabase**: Data storage and management
