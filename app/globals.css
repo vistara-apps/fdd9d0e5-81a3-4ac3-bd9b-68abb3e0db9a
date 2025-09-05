@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-800;
+  }
+  
+  body {
+    @apply bg-bg text-text-primary;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-surface/80 backdrop-blur-sm border border-gray-800/50 rounded-lg shadow-card;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-600 hover:to-primary transition-all duration-200 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-surface border border-gray-700 text-text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-all duration-200;
+  }
+  
+  .btn-accent {
+    @apply bg-gradient-to-r from-accent to-orange-500 text-white px-6 py-3 rounded-lg font-medium hover:from-orange-500 hover:to-accent transition-all duration-200 shadow-lg hover:shadow-xl;
+  }
+  
+  .metric-card {
+    @apply glass-card p-6 hover:bg-surface/90 transition-all duration-200;
+  }
+  
+  .product-card {
+    @apply glass-card p-4 hover:bg-surface/90 transition-all duration-200 cursor-pointer;
+  }
+  
+  .offer-card {
+    @apply glass-card p-4 border-accent/30 hover:border-accent/50 transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
