@@ -2,15 +2,17 @@
 
 import { useEffect } from 'react';
 import { useMiniKit } from '@coinbase/onchainkit/minikit';
+import { useRouter } from 'next/navigation';
 import { AppShell } from '@/components/layout/AppShell';
 import { StoreMetrics } from '@/components/features/StoreMetrics';
 import { RecommendationEngine } from '@/components/features/RecommendationEngine';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import { Zap, ShoppingBag, Users, BarChart3 } from 'lucide-react';
+import { Zap, ShoppingBag, Users, BarChart3, ArrowRight } from 'lucide-react';
 
 export default function HomePage() {
   const { setFrameReady } = useMiniKit();
+  const router = useRouter();
 
   useEffect(() => {
     setFrameReady();
@@ -38,6 +40,16 @@ export default function HomePage() {
             Personalized on-chain shopping experiences powered by AI. 
             Transform your retail store with intelligent recommendations and customer engagement.
           </p>
+          <div className="mt-6">
+            <Button
+              variant="primary"
+              onClick={() => router.push('/dashboard')}
+              className="mx-auto"
+            >
+              Open Dashboard
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
         </div>
 
         {/* Quick Actions */}
