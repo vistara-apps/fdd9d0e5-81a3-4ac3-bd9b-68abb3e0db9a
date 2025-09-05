@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { ProductCard } from './ProductCard';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
+import { SkeletonCard } from '@/components/ui/SkeletonCard';
+import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
 import { Product, Recommendation } from '@/lib/types';
 import { SAMPLE_PRODUCTS } from '@/lib/constants';
 import { calculateRecommendationScore } from '@/lib/utils';
@@ -149,14 +151,7 @@ export function RecommendationEngine({
       {loading && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[1, 2, 3].map((i) => (
-            <Card key={i} className="animate-pulse">
-              <div className="aspect-square bg-gray-800 rounded-lg mb-4" />
-              <div className="space-y-3">
-                <div className="h-4 bg-gray-800 rounded w-3/4" />
-                <div className="h-3 bg-gray-800 rounded w-1/2" />
-                <div className="h-8 bg-gray-800 rounded w-full" />
-              </div>
-            </Card>
+            <SkeletonCard key={i} variant="product" />
           ))}
         </div>
       )}
