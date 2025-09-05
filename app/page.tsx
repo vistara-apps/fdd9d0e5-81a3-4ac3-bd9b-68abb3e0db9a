@@ -5,9 +5,10 @@ import { useMiniKit } from '@coinbase/onchainkit/minikit';
 import { AppShell } from '@/components/layout/AppShell';
 import { StoreMetrics } from '@/components/features/StoreMetrics';
 import { RecommendationEngine } from '@/components/features/RecommendationEngine';
+import { PaymentDemo } from '@/components/features/PaymentDemo';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import { Zap, ShoppingBag, Users, BarChart3 } from 'lucide-react';
+import { Zap, ShoppingBag, Users, BarChart3, CreditCard } from 'lucide-react';
 
 export default function HomePage() {
   const { setFrameReady } = useMiniKit();
@@ -95,6 +96,22 @@ export default function HomePage() {
             <h2 className="text-2xl font-bold text-text-primary">Store Performance</h2>
           </div>
           <StoreMetrics />
+        </div>
+
+        {/* x402 Payment Demo */}
+        <div>
+          <div className="flex items-center space-x-3 mb-6">
+            <CreditCard className="w-6 h-6 text-green-400" />
+            <h2 className="text-2xl font-bold text-text-primary">x402 Payment Integration</h2>
+          </div>
+          <PaymentDemo
+            onPaymentSuccess={(result) => {
+              console.log('Payment successful:', result);
+            }}
+            onPaymentError={(error) => {
+              console.error('Payment failed:', error);
+            }}
+          />
         </div>
 
         {/* AI Recommendations Demo */}

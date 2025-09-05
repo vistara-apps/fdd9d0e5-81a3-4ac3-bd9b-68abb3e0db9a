@@ -94,7 +94,7 @@ export const SAMPLE_PRODUCTS = [
     brand: 'AudioTech',
     imageUrl: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400',
     inStock: true,
-    tags: ['wireless', 'bluetooth', 'noise-cancelling'],
+    tags: ['wireless', 'bluetooth', 'noise-cancelling'] as string[],
     createdAt: new Date(),
     updatedAt: new Date(),
   },
@@ -107,7 +107,7 @@ export const SAMPLE_PRODUCTS = [
     brand: 'EcoWear',
     imageUrl: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400',
     inStock: true,
-    tags: ['organic', 'cotton', 'sustainable'],
+    tags: ['organic', 'cotton', 'sustainable'] as string[],
     createdAt: new Date(),
     updatedAt: new Date(),
   },
@@ -120,7 +120,7 @@ export const SAMPLE_PRODUCTS = [
     brand: 'SecureHome',
     imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400',
     inStock: true,
-    tags: ['smart', 'security', 'camera', '1080p'],
+    tags: ['smart', 'security', 'camera', '1080p'] as string[],
     createdAt: new Date(),
     updatedAt: new Date(),
   },
@@ -133,11 +133,11 @@ export const SAMPLE_PRODUCTS = [
     brand: 'ZenFit',
     imageUrl: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400',
     inStock: true,
-    tags: ['yoga', 'fitness', 'non-slip', 'premium'],
+    tags: ['yoga', 'fitness', 'non-slip', 'premium'] as string[],
     createdAt: new Date(),
     updatedAt: new Date(),
   },
-] as const;
+];
 
 // Error messages
 export const ERROR_MESSAGES = {
