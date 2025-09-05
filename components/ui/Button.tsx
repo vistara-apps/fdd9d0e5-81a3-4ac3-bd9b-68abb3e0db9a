@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { ButtonProps } from '@/lib/types';
-import { Loader2 } from 'lucide-react';
+import { LoadingSpinner } from './LoadingSpinner';
 
 export function Button({
   variant = 'primary',
@@ -14,13 +14,13 @@ export function Button({
   className = '',
   type = 'button',
 }: ButtonProps) {
-  const baseClasses = 'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-bg disabled:opacity-50 disabled:cursor-not-allowed';
+  const baseClasses = 'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-bg disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 active:scale-95';
   
   const variantClasses = {
     primary: 'btn-primary focus:ring-primary',
-    secondary: 'btn-secondary focus:ring-gray-500',
+    secondary: 'btn-secondary focus:ring-secondary',
     accent: 'btn-accent focus:ring-accent',
-    outline: 'border border-gray-600 text-text-primary hover:bg-surface focus:ring-gray-500',
+    outline: 'border border-border text-text-primary hover:bg-surface-hover focus:ring-border-light',
   };
   
   const sizeClasses = {
@@ -42,7 +42,7 @@ export function Button({
       )}
     >
       {loading && (
-        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+        <LoadingSpinner size="sm" className="mr-2" />
       )}
       {children}
     </button>

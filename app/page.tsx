@@ -25,16 +25,16 @@ export default function HomePage() {
     <AppShell>
       <div className="space-y-8">
         {/* Hero Section */}
-        <div className="text-center space-y-4">
-          <div className="flex items-center justify-center space-x-3 mb-4">
-            <div className="p-4 bg-gradient-to-r from-primary to-accent rounded-2xl">
+        <div className="text-center space-y-6">
+          <div className="flex items-center justify-center space-x-3 mb-6">
+            <div className="p-4 bg-gradient-to-r from-primary to-accent rounded-2xl shadow-lg">
               <Zap className="w-8 h-8 text-white" />
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-gradient">
+          <h1 className="text-heading-1 text-gradient mb-4">
             Welcome to RetailRune
           </h1>
-          <p className="text-xl text-text-secondary max-w-2xl mx-auto">
+          <p className="text-body-large text-text-secondary max-w-3xl mx-auto leading-relaxed">
             Personalized on-chain shopping experiences powered by AI. 
             Transform your retail store with intelligent recommendations and customer engagement.
           </p>
@@ -42,73 +42,83 @@ export default function HomePage() {
 
         {/* Quick Actions */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card className="text-center group hover:scale-105">
-            <div className="p-4 bg-primary/20 rounded-full w-fit mx-auto mb-4">
-              <Zap className="w-8 h-8 text-primary" />
+          <Card className="text-center group hover:scale-105 transition-all duration-300 hover:shadow-lg">
+            <div className="p-4 bg-primary/20 rounded-full w-fit mx-auto mb-6 group-hover:bg-primary/30 transition-colors">
+              <Zap className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
             </div>
-            <h3 className="text-lg font-semibold text-text-primary mb-2">
+            <h3 className="text-heading-4 text-text-primary mb-3">
               AI Recommendations
             </h3>
-            <p className="text-text-secondary mb-4">
-              Generate personalized product recommendations for your customers
+            <p className="text-body-small text-text-secondary mb-6 leading-relaxed">
+              Generate personalized product recommendations for your customers using advanced AI algorithms
             </p>
-            <Button variant="primary" size="sm">
+            <Button variant="primary" size="sm" className="w-full">
               Generate Now
             </Button>
           </Card>
 
-          <Card className="text-center group hover:scale-105">
-            <div className="p-4 bg-accent/20 rounded-full w-fit mx-auto mb-4">
-              <ShoppingBag className="w-8 h-8 text-accent" />
+          <Card className="text-center group hover:scale-105 transition-all duration-300 hover:shadow-lg">
+            <div className="p-4 bg-accent/20 rounded-full w-fit mx-auto mb-6 group-hover:bg-accent/30 transition-colors">
+              <ShoppingBag className="w-8 h-8 text-accent group-hover:scale-110 transition-transform" />
             </div>
-            <h3 className="text-lg font-semibold text-text-primary mb-2">
+            <h3 className="text-heading-4 text-text-primary mb-3">
               Product Catalog
             </h3>
-            <p className="text-text-secondary mb-4">
-              Manage your product inventory and pricing
+            <p className="text-body-small text-text-secondary mb-6 leading-relaxed">
+              Manage your product inventory, pricing, and availability with our intuitive dashboard
             </p>
-            <Button variant="accent" size="sm">
+            <Button variant="accent" size="sm" className="w-full">
               View Products
             </Button>
           </Card>
 
-          <Card className="text-center group hover:scale-105">
-            <div className="p-4 bg-green-400/20 rounded-full w-fit mx-auto mb-4">
-              <Users className="w-8 h-8 text-green-400" />
+          <Card className="text-center group hover:scale-105 transition-all duration-300 hover:shadow-lg">
+            <div className="p-4 bg-success/20 rounded-full w-fit mx-auto mb-6 group-hover:bg-success/30 transition-colors">
+              <Users className="w-8 h-8 text-success group-hover:scale-110 transition-transform" />
             </div>
-            <h3 className="text-lg font-semibold text-text-primary mb-2">
+            <h3 className="text-heading-4 text-text-primary mb-3">
               Customer Insights
             </h3>
-            <p className="text-text-secondary mb-4">
-              Analyze customer behavior and preferences
+            <p className="text-body-small text-text-secondary mb-6 leading-relaxed">
+              Analyze customer behavior patterns and preferences to optimize your retail strategy
             </p>
-            <Button variant="secondary" size="sm">
+            <Button variant="secondary" size="sm" className="w-full">
               View Analytics
             </Button>
           </Card>
         </div>
 
         {/* Store Metrics */}
-        <div>
-          <div className="flex items-center space-x-3 mb-6">
-            <BarChart3 className="w-6 h-6 text-primary" />
-            <h2 className="text-2xl font-bold text-text-primary">Store Performance</h2>
+        <section>
+          <div className="flex items-center space-x-3 mb-8">
+            <div className="p-2 bg-primary/20 rounded-lg">
+              <BarChart3 className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <h2 className="text-heading-2 text-text-primary">Store Performance</h2>
+              <p className="text-body-small text-text-secondary">Real-time metrics and insights</p>
+            </div>
           </div>
           <StoreMetrics />
-        </div>
+        </section>
 
         {/* AI Recommendations Demo */}
-        <div>
-          <div className="flex items-center space-x-3 mb-6">
-            <Zap className="w-6 h-6 text-accent" />
-            <h2 className="text-2xl font-bold text-text-primary">Live Recommendations</h2>
+        <section>
+          <div className="flex items-center space-x-3 mb-8">
+            <div className="p-2 bg-accent/20 rounded-lg">
+              <Zap className="w-6 h-6 text-accent" />
+            </div>
+            <div>
+              <h2 className="text-heading-2 text-text-primary">Live Recommendations</h2>
+              <p className="text-body-small text-text-secondary">AI-powered product suggestions</p>
+            </div>
           </div>
           <RecommendationEngine
             userId="demo_user"
             context="in_store"
             onInteraction={handleProductInteraction}
           />
-        </div>
+        </section>
 
         {/* Feature Highlights */}
         <Card>

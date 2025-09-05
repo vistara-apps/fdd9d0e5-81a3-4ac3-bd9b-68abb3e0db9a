@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/Card';
+import { SkeletonCard } from '@/components/ui/SkeletonCard';
 import { StoreMetrics as StoreMetricsType } from '@/lib/types';
 import { formatCurrency } from '@/lib/utils';
 import { Users, Zap, TrendingUp, ShoppingCart, Eye, Heart } from 'lucide-react';
@@ -34,10 +35,7 @@ export function StoreMetrics() {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[1, 2, 3, 4].map((i) => (
-          <Card key={i} variant="metric" className="animate-pulse">
-            <div className="h-12 bg-gray-800 rounded mb-4" />
-            <div className="h-6 bg-gray-800 rounded w-1/2" />
-          </Card>
+          <SkeletonCard key={i} variant="metric" />
         ))}
       </div>
     );

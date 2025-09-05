@@ -9,9 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        // Design system color tokens
+        // Background colors
+        bg: "var(--bg)",
+        surface: "var(--surface)",
+        "surface-hover": "var(--surface-hover)",
+        
+        // Text colors
+        "text-primary": "var(--text-primary)",
+        "text-secondary": "var(--text-secondary)",
+        "text-muted": "var(--text-muted)",
+        
+        // Brand colors
         primary: {
           DEFAULT: "var(--primary)",
           50: "var(--primary-50)",
@@ -54,24 +62,20 @@ const config: Config = {
           900: "var(--accent-900)",
           950: "var(--accent-950)",
         },
-        muted: {
-          DEFAULT: "var(--muted)",
-          foreground: "var(--muted-foreground)",
-        },
-        destructive: {
-          DEFAULT: "var(--destructive)",
-          foreground: "var(--destructive-foreground)",
-        },
+        
+        // Semantic colors
+        success: "var(--success)",
+        warning: "var(--warning)",
+        error: "var(--error)",
+        info: "var(--info)",
+        
+        // Border
         border: "var(--border)",
-        input: "var(--input)",
-        ring: "var(--ring)",
-        chart: {
-          1: "var(--chart-1)",
-          2: "var(--chart-2)",
-          3: "var(--chart-3)",
-          4: "var(--chart-4)",
-          5: "var(--chart-5)",
-        },
+        "border-light": "var(--border-light)",
+      },
+      boxShadow: {
+        card: "var(--shadow-card)",
+        lg: "var(--shadow-lg)",
       },
       borderRadius: {
         lg: "var(--radius)",
